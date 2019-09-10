@@ -1,6 +1,6 @@
 package fr.ensibs.graphic;
 
-import fr.ensibs.graphic;
+import fr.ensibs.graphic.Image;
 
 /**
  * Manage the display of images on the device
