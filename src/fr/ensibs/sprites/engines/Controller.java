@@ -1,5 +1,6 @@
 package fr.ensibs.sprites.engines;
 
+import java.io.InputStream;
 import fr.ensibs.graphic.*;
 import fr.ensibs.util.fs.*;
 
