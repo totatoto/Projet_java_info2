@@ -1,0 +1,5 @@
+src/fr/ensibs/graphic/Graphic
+src/fr/ensibs/graphic/Image
+src/fr/ensibs/graphic/ImageLoader
+src/fr/ensibs/sprites/engines/Controller
+src/fr/ensibs/util/fs/FileSystem
