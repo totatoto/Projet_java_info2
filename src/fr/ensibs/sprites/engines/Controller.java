@@ -1,18 +1,19 @@
 package fr.ensibs.sprites.engines;
 
 /**
- * 
- * 
+ * Controller handle the basic logic of the application
+ * @inv graphic != null
  */
 public class Controller {
 	
 	/**
-	 * 
+	 * Graphics allowing to draw on the device's screen
 	 */
 	private Graphic graphic;
 	
 	/**
-	 * 
+	 * ImageLoader used to load images
+	 * @inv
 	 */
 	private ImageLoader loader;
 	
