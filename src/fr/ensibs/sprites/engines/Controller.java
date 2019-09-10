@@ -1,8 +1,13 @@
 package fr.ensibs.sprites.engines;
 
+import fr.ensibs.graphic.*;
+import fr.ensibs.util.fs.*;
+
 /**
  * Controller handle the basic logic of the application
  * @inv graphic != null
+ * @inv loader != null
+ * @inv fileSystem != null
  */
 public class Controller {
 	
@@ -13,31 +18,35 @@ public class Controller {
 	
 	/**
 	 * ImageLoader used to load images
-	 * @inv
 	 */
 	private ImageLoader loader;
 	
 	/**
-	 * 
+	 * File System
 	 */
 	private FileSystem fileSystem;
 	
 	/**
-	 *
+	 * Construct a new controller from the given arguments
 	 * 
-	 * @param graphic 
-	 * @param loader
-	 * @param fs
+	 * @param graphic graphic drawer
+	 * @param loader image loader
+	 * @param fs file system
+	 * @throws NullPointerException if one of the argument is null
+	 * @pre graphic != null && loader != null && fs != null
 	 */
 	public Controller (Graphic graphic, ImageLoader loader, FileSystem fs) {
+		if(graphic == null || loader == null || fs == null)
+			throw new NullPointerException();
+		
 		this.graphic = graphic;
 		this.loader = loader;
 		this.fileSystem = fs;
 	}
 	
 	/**
-	 * 
-	 * @param filename
+	 * Display the specified image on the device's screen
+	 * @param filename path to the image file that should be displayed
 	 */
 	public void displayImage (String filename) {
 		InputStream is = this.fileSystem.openFile(filename);
