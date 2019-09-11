@@ -1,32 +1,29 @@
 package fr.ensibs.swing.graphic;
 
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
 import fr.ensibs.graphic.Image;
 
 public class SwingImage implements Image {
-	
+
 	private String name;
-	private int width;
-	private int height;
-	private int[] pixels;
-	
-	private Dimension dimensions;
-	
-	public SwingImage (BufferedImage image) {
-		this.name = "JSPquellenom"; // TODO je ne sais pas quelle nom doit avoir l'image.
-		this.width = image.getWidth();
-		this.height = image.getHeight();
-		this.pixels = image.getData().getPixels(0, 0, this.width, this.height, this.pixels); // TODO jsp si c'est ça.
-		
-		this.dimensions = new Dimension(this.width, this.height);
+
+	private BufferedImage image;
+	private Dimension dimension;
+
+	public SwingImage (BufferedImage image, String name) {
+		this.name = name;
+		this.image = image;
+		this.dimension = new Dimension(image.getWidth(), image.getHeight());
 	}
-	
+
 	@Override
 	/**
 	 * Get the name of the image
 	 * @return the name of the image
 	 * @post return != null && return not empty (return.length() > 0)
 	 */
-	String getName() {
+	public String getName() {
 		return this.name;
 	}
 
@@ -36,8 +33,8 @@ public class SwingImage implements Image {
 	 * @return the width of the image
 	 * @post return > 0
 	 */
-	int getWidth() {
-		return this.width;
+	public int getWidth() {
+		return this.image.getWidth();
 	}
 
 	@Override
@@ -46,8 +43,8 @@ public class SwingImage implements Image {
 	 * @return the height of the image
 	 * @post return > 0
 	 */
-	int getHeight() {
-		return this.height;
+	public int getHeight() {
+		return this.image.getHeight();
 	}
 
 	@Override
@@ -56,7 +53,7 @@ public class SwingImage implements Image {
 	 * @return the dimension of the image
 	 * @post return.width == getWidth() && return.height == getHeight() && return.width > 0 && return.height > 0
 	 */
-	Dimension getDimension() {
+	public Dimension getDimension() {
 		return this.dimension;
 	}
 }
