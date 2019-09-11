@@ -5,7 +5,8 @@ import fr.ensibs.graphic.ImageLoader;
 import fr.ensibs.sprites.engines.Controller;
 import fr.ensibs.swing.fs.SwingFileSystem;
 import fr.ensibs.swing.graphic.SwingGraphicEmpty;
-import fr.ensibs.swing.graphic.SwingImageLoader;
+//import fr.ensibs.swing.graphic.SwingImageLoader;
+import fr.ensibs.swing.graphic.SwingImageLoaderTest;
 import fr.ensibs.util.fs.FileSystem;
 
 import javax.swing.*;
@@ -23,10 +24,10 @@ public class SwingMain {
     public static void main(String[] args) {
         Graphic graphic = new SwingGraphicEmpty(new JLabel());
         FileSystem system = new SwingFileSystem();
-        ImageLoader loader = new SwingImageLoader();
+        ImageLoader loader = new SwingImageLoaderTest();
 
         Controller controller = new Controller(graphic, loader, system);
-        controller.displayImage("img/test.png");
+        controller.displayImage("test.png");
     }
 
 }

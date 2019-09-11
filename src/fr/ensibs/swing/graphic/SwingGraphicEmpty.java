@@ -34,6 +34,7 @@ public class SwingGraphicEmpty implements Graphic {
         //if the image is not null, which should never be the case, if contracts are respected, we display a text to show that the image has been
         //correctly loaded
         if(image != null){
+            System.out.println("Correctly loaded");
             component.add(new JLabel(("Image loaded")));
         }
     }
