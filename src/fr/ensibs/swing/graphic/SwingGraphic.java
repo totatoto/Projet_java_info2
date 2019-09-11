@@ -31,12 +31,8 @@ public class SwingGraphic implements Graphic {
      */
     @Override
     public void display(Image image) {
-        //if the image is not null, which should never be the case, if contracts are respected, we display a text to show that the image has been
-        //correctly loaded
-        if(image != null){
-            System.out.println("Correctly loaded");
+        if(image instanceof SwingImage){
             this.component.add(new JLabel(new ImageIcon(((SwingImage)image).getImage())));
-            component.add(new JLabel(("Image loaded")));
         }
     }
 }

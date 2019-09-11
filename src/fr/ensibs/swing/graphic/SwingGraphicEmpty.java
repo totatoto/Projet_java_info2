@@ -35,7 +35,6 @@ public class SwingGraphicEmpty implements Graphic {
         //correctly loaded
         if(image != null){
             System.out.println("Correctly loaded");
-            component.add(new JLabel(("Image loaded")));
         }
     }
 }
