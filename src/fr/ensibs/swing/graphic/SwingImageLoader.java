@@ -10,7 +10,7 @@ import fr.ensibs.graphic.ImageLoader;
  * Allows to load an SwingImage
  */
 public class SwingImageLoader {
-	
+
 	/**
 	 * Load a SwingImage from an input stream
 	 * @param is the input stream to use
