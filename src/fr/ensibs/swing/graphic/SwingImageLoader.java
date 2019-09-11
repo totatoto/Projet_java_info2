@@ -2,8 +2,8 @@ package fr.ensibs.swing.graphic;
 
 import java.io.InputStream;
 
-import java.awt.Image
-//import fr.ensibs.graphic.Image;
+//import java.awt.Image
+import fr.ensibs.graphic.Image;
 import fr.ensibs.graphic.ImageLoader;
 
 /**
@@ -19,6 +19,6 @@ public class SwingImageLoader {
 	 */
 	public Image load(InputStream is) {
 		InputStream in = new FileInputStream("image.png");
-		return ImageIO.read(in);
+		return null; //ImageIO.read(in);
 	}
 }
