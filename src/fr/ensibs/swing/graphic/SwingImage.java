@@ -17,6 +17,11 @@ public class SwingImage implements Image {
 		this.dimension = new Dimension(image.getWidth(), image.getHeight());
 	}
 
+	public java.awt.Image getImage()
+	{
+		return (java.awt.Image) this.image;
+	}
+
 	@Override
 	/**
 	 * Get the name of the image
