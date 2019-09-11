@@ -1,5 +1,10 @@
-src/fr/ensibs/graphic/Graphic
-src/fr/ensibs/graphic/Image
-src/fr/ensibs/graphic/ImageLoader
-src/fr/ensibs/sprites/engines/Controller
-src/fr/ensibs/util/fs/FileSystem
+src/fr/ensibs/graphic/Graphic.java
+src/fr/ensibs/graphic/Image.java
+src/fr/ensibs/graphic/ImageLoader.java
+src/fr/ensibs/sprites/engines/Controller.java
+src/fr/ensibs/swing/fs/SwingFileSystem.java
+src/fr/ensibs/swing/graphic/SwingGraphicEmpty.java
+src/fr/ensibs/swing/graphic/SwingImage.java
+src/fr/ensibs/swing/graphic/SwingImageLoader.java
+src/fr/ensibs/swing/sprites/swingMain.java
+src/fr/ensibs/util/fs/FileSystem.java
