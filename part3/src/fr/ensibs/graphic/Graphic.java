@@ -3,7 +3,7 @@ package fr.ensibs.graphic;
 /**
  * Manage the display of images on the device
  */
-public interface Graphic<ImageType> {
+public interface Graphic<ImageType extends Image> {
   
   /**
    * Display the specified image on the screen of the device

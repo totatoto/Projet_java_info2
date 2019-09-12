@@ -1,6 +1,8 @@
 package fr.ensibs.sprites.engines;
 
 import java.io.InputStream;
+
+import fr.ensibs.graphic.Image;
 import fr.ensibs.graphic.ImageLoader;
 import fr.ensibs.graphic.Graphic;
 import fr.ensibs.util.fs.FileSystem;
@@ -11,7 +13,7 @@ import fr.ensibs.util.fs.FileSystem;
  * @inv loader != null
  * @inv fileSystem != null
  */
-public class Controller<ImageType> {
+public class Controller<ImageType extends Image> {
 	
 	/**
 	 * Graphics allowing to draw on the device's screen

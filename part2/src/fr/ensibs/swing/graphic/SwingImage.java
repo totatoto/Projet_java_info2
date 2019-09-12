@@ -6,7 +6,7 @@ import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 
 /**
- * This represente a image using Swing that can be loaded from the file system and then display on the screen
+ * This represent an image using Swing that can be loaded from the file system and then display on the screen
  */ 
 public class SwingImage implements Image {
 

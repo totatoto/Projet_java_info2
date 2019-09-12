@@ -10,7 +10,7 @@ import fr.ensibs.util.fs.*;
  * @inv loader != null
  * @inv fileSystem != null
  */
-public class Controller<ImageType> {
+public class Controller<ImageType extends Image> {
 	
 	/**
 	 * Graphics allowing to draw on the device's screen

@@ -1,12 +1,11 @@
 package fr.ensibs.swing.graphic;
 
-import fr.ensibs.graphic.Image;
 import fr.ensibs.graphic.ImageLoader;
 
 import javax.imageio.ImageIO;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.FileInputStream;
 
 /**
  * Allows to load an SwingImage

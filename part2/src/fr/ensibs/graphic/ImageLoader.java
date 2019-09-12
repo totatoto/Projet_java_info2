@@ -5,7 +5,7 @@ import java.io.InputStream;
 /**
  * Allows to load an image
  */
-public interface ImageLoader<ImageType> {
+public interface ImageLoader<ImageType extends Image> {
 	
 	/**
 	 * Load an image from an input stream
