@@ -6,6 +6,7 @@ import fr.ensibs.graphic.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JComponent;
+import java.awt.Graphics;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,11 @@ public class SwingGraphic implements Graphic<SwingImage> {
      */
     private JComponent component;
 
+	/**
+	 * ImageDisplay to make possible to draw the image
+	 */
+    private ImageDisplay display;
+
     /**
      * Create a new SwingGraphic
      * @param component the component that will hold the image
@@ -25,6 +31,8 @@ public class SwingGraphic implements Graphic<SwingImage> {
      */
     public SwingGraphic(JComponent component){
         this.component = Objects.requireNonNull(component);
+        display = new ImageDisplay();
+        this.component.add(display);
     }
 
     /**
@@ -32,6 +40,28 @@ public class SwingGraphic implements Graphic<SwingImage> {
      */
     @Override
     public void display(SwingImage image) {
-        this.component.add(new JLabel(new ImageIcon(((SwingImage)image).getImage())));
+        display.setPreferredSize(image.getDimension());
+        display.current = image;
+        display.repaint();
+    }
+	
+	/**
+	 * Make possible to draw the image
+	 */
+	private static class ImageDisplay extends JComponent {
+
+		/**
+		 * The SwingImage to display on
+		 */
+        private SwingImage current;
+
+		/**
+		 * {@inheritDoc}
+		 */
+        @Override
+        public void paintComponent(Graphics g) {
+            if (current != null)
+                g.drawImage(current.getImage(), 0, 0, current.getWidth(), current.getHeight(), null);
+        }
     }
 }
