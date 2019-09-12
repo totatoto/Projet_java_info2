@@ -10,7 +10,7 @@ import java.util.Objects;
  * Swing implementation of the graphic interface
  * @author Daphnis Chevreton
  */
-public class SwingGraphicEmpty implements Graphic {
+public class SwingGraphicEmpty implements Graphic<SwingImage> {
 
     /**
      * Component on which the image will be drawn
@@ -30,7 +30,7 @@ public class SwingGraphicEmpty implements Graphic {
      * {@inheritDoc}
      */
     @Override
-    public void display(Image image) {
+    public void display(SwingImage image) {
         //if the image is not null, which should never be the case, if contracts are respected, we display a text to show that the image has been
         //correctly loaded
         if(image != null){
