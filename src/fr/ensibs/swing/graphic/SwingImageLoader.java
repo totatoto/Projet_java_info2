@@ -10,10 +10,10 @@ import java.io.InputStream;
 /**
  * Allows to load an SwingImage
  */
-public class SwingImageLoader implements ImageLoader {
+public class SwingImageLoader implements ImageLoader<SwingImage> {
 
     @Override
-	public Image load(InputStream is) {
+	public SwingImage load(InputStream is) {
         try {
             return new SwingImage(ImageIO.read(is), "IMG_" + is.hashCode());
         } catch (IOException e) {

@@ -6,6 +6,7 @@ import fr.ensibs.graphic.ImageLoader;
 import fr.ensibs.sprites.engines.Controller;
 import fr.ensibs.swing.fs.SwingFileSystem;
 import fr.ensibs.swing.graphic.SwingGraphic;
+import fr.ensibs.swing.graphic.SwingImage;
 import fr.ensibs.swing.graphic.SwingImageLoader;
 import fr.ensibs.util.fs.FileSystem;
 
@@ -30,11 +31,11 @@ public class SwingMain {
         f.setContentPane(pan);
 
         //Graphic graphic = new SwingGraphicEmpty(new JLabel());
-        Graphic graphic = new SwingGraphic(pan);
+        Graphic<SwingImage> graphic = new SwingGraphic(pan);
         FileSystem system = new SwingFileSystem();
-        ImageLoader loader = new SwingImageLoader();
+        ImageLoader<SwingImage> loader = new SwingImageLoader();
 
-        Controller controller = new Controller(graphic, loader, system);
+        Controller<SwingImage> controller = new Controller<>(graphic, loader, system);
         controller.displayImage("test.png");
 
         f.pack();

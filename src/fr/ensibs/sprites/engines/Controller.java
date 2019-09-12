@@ -10,17 +10,17 @@ import fr.ensibs.util.fs.*;
  * @inv loader != null
  * @inv fileSystem != null
  */
-public class Controller {
+public class Controller<ImageType> {
 	
 	/**
 	 * Graphics allowing to draw on the device's screen
 	 */
-	private Graphic graphic;
+	private Graphic<ImageType> graphic;
 	
 	/**
 	 * ImageLoader used to load images
 	 */
-	private ImageLoader loader;
+	private ImageLoader<ImageType> loader;
 	
 	/**
 	 * File System
@@ -36,7 +36,7 @@ public class Controller {
 	 * @throws NullPointerException if one of the argument is null
 	 * @pre graphic != null && loader != null && fs != null
 	 */
-	public Controller (Graphic graphic, ImageLoader loader, FileSystem fs) {
+	public Controller (Graphic<ImageType> graphic, ImageLoader<ImageType> loader, FileSystem fs) {
 		if(graphic == null || loader == null || fs == null)
 			throw new NullPointerException();
 		
@@ -52,7 +52,7 @@ public class Controller {
 	public void displayImage (String filename) {
 		InputStream is = this.fileSystem.openFile(filename);
 		if (is != null) {
-			Image img = this.loader.load(is);
+			ImageType img = this.loader.load(is);
 			if (img != null) {
 				this.graphic.display(img);
 			}

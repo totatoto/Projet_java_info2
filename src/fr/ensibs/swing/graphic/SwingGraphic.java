@@ -10,7 +10,7 @@ import java.util.Objects;
  * Swing implementation of the graphic interface
  * @author Daphnis Chevreton
  */
-public class SwingGraphic implements Graphic {
+public class SwingGraphic implements Graphic<SwingImage> {
 
     /**
      * Component on which the image will be drawn
@@ -30,9 +30,7 @@ public class SwingGraphic implements Graphic {
      * {@inheritDoc}
      */
     @Override
-    public void display(Image image) {
-        if(image instanceof SwingImage){
-            this.component.add(new JLabel(new ImageIcon(((SwingImage)image).getImage())));
-        }
+    public void display(SwingImage image) {
+        this.component.add(new JLabel(new ImageIcon(((SwingImage)image).getImage())));
     }
 }
